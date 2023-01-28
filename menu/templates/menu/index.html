@@ -1,0 +1,10 @@
+{% extends 'menu/base.html' %}
+{% load static %}
+{% load menu_tags %}
+
+{% block content %}
+    <a href="/"><h1>HOME</h1></a>
+    {% draw_menu 'Menu1' %}
+    {% draw_menu 'Menu2' %}
+    {% draw_menu 'Menu3' %}
+{% endblock %}

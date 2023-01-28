@@ -1,0 +1,22 @@
+{% for m in menu %}
+    {% if m.menu_name == chosen_item %}
+        <ul><a href="{{m.get_absolute_url}}" style="color:red" class="menu_title">{{m.menu_name}}:</a>
+    {% else %}
+        <ul><a href="{{m.get_absolute_url}}" class="menu_title">{{m.menu_name}}:</a>
+    {% endif %}
+    {% for menu_item in m.categories.all %}
+
+        <li>
+            {% if menu_item == chosen_item %}
+                <a href="{{ menu_item.get_absolute_url }}" style="color:red" class="menu_item">{{menu_item}}</a>
+            {% else %}
+                <a href="{{ menu_item.get_absolute_url }}" class="menu_item">{{menu_item}}</a>
+            {% endif %}
+            {% include "menu/menu.html" %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+
+
