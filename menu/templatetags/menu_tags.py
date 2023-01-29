@@ -11,4 +11,4 @@ def draw_menu(slug, chosen_item=None):
     menu = Menu.objects.filter(slug=slug)
     return {'menu': menu, 'chosen_item': chosen_item}
 
-
+# <!--        {% if menu_item.subcategory_id == chosen_item.id or menu_menu_item.id < menu_menu_item.subcategory_id %}-->

@@ -4,10 +4,12 @@
 {% block content %}
     {% for menu_menu_item in menu_item.subcategories.all %}
     <ul>
-        {% if menu_menu_item == chosen_item %}
-            <a href="{{ menu_menu_item.get_absolute_url }}" style="color:red" class="menu_item">{{ menu_menu_item }}</a>
+        {% if menu_menu_item.id == chosen_item.id %}
+            <a href="{{ menu_menu_item.get_absolute_url }}"
+               style="color:red" class="menu_item">{{ menu_menu_item.category_name }}</a>
         {% else %}
-            <a href="{{ menu_menu_item.get_absolute_url }}" class="menu_item">{{ menu_menu_item }}</a>
+            <a href="{{ menu_menu_item.get_absolute_url }}"
+               class="menu_item">{{ menu_menu_item.category_name }}</a>
         {% endif %}
         <ul>
             {% include "menu/menu.html" with menu_item=menu_menu_item %}
